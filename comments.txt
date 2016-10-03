@@ -1,0 +1,6 @@
+Tyler's Comments on Homeworks
+
+2016.10.03 - HW4 - Great job, but I'm not sure where you came up with
+the approach of the function which generates the random data using
+sapply. Can you explain? (just type below and I'll see your response
+next time!)

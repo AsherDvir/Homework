@@ -17,6 +17,10 @@ y <- out[, 2]
 x <- out[, 1]
 #We add a beta_0 coefficient
 x_1 <- rep(1, time = 50)
+
+########## Comment
+# Note that by doing this your output (beta) will be in reverse order,
+# with the slope coming first and the intercept coming second.
 X <- cbind(x, x_1)
 
 # Now carry out intermediate calculations
@@ -29,19 +33,29 @@ beta
 
 # Now add this line to the plot
 plot(out)
-abline(lm(out[,2]~out[,1]), col="red") # regression line (y~x) 
+abline(lm(out[,2]~out[,1]), col="red") # regression line (y~x)
+
+########### Comment
+# As in class, need to specify a and b properly
 abline(a=0, b=beta, col="blue")
 
 #3------------------------------------
 # Set the correlation parameter and mean
+###These lines unnecessary
 beta = 0.5
 SIGMA = matrix(c(1,beta,beta,1), ncol=2)
+
+
+
 MU = c(2.0, 1.0, 3.0)
 A
 beta_1 = 0.5
 beta_2 = 0.7
 
 SIGMA_2 = matrix(c(1,beta_1, beta_2, beta_1, 1, beta_2, beta_2, beta_1, 1), ncol = 3)
+############### Comment
+# if this is meant to print, use sprintf not return, which should be
+# reserved for functions
 return(SIGMA_2)
 
 # Set the sample size
@@ -90,7 +104,12 @@ lm (y ~ z + x)
 
 #I create randomly generated data, then paste that data into a csv file that I upload into r studio
 
-# I create random data using the props function                
+# I create random data using the props function
+
+#### Comment
+# Be cqreful here, nested function definitions are confusing. If you
+# want to define two functions do it seperately.
+
 props <- function(ncol, nrow, var.names=NULL){
   if (ncol < 2) stop("ncol must be greater than 1")
   p <- function(n){
@@ -112,8 +131,8 @@ props <- function(ncol, nrow, var.names=NULL){
 props(ncol=3, nrow=15)
 hist(ncol = 1)
 
-#I copied that data into a csv off screen and read that data into r studio 
-Randomly.Generated.Data.for.Problem.4 <- read.csv("C:/Users/Asher/OneDrive/Progam_Econ/Session4_HW/Randomly Generated Data for Problem 4.csv", row.names=1) 
+#I copied that data into a csv off screen and read that data into r studio
+Randomly.Generated.Data.for.Problem.4 <- read.csv("C:/Users/Asher/OneDrive/Progam_Econ/Session4_HW/Randomly Generated Data for Problem 4.csv", row.names=1)
 
 
 #Create a vector of means - not necessary for this incorrect approach.
@@ -130,8 +149,3 @@ CorrelationMatrix
 #Estimate the effect of x2 and x3 on x1
 beta_0 <- rep(1, time=15)
 lm (Randomly.Generated.Data.for.Problem.4$X1 ~ Randomly.Generated.Data.for.Problem.4$X2 + Randomly.Generated.Data.for.Problem.4$X3)
-
-
-
-
-
