@@ -4,3 +4,5 @@ Tyler's Comments on Homeworks
 the approach of the function which generates the random data using
 sapply. Can you explain? (just type below and I'll see your response
 next time!)
+
+2016.10.22 - HW5 and HW6 - Hi Asher, thanks for submitting something. I understand the last two weeks have been busy. Keep your head up! ... or down, in the books... you get the drift.
