@@ -9,3 +9,12 @@ next time!)
 
 2016.11.05 - HW7 and HW8 - Looks good! If at some point you write up
 your paper, I'd be interested to take a look!
+
+2016.11.28 - HW9 - Great job, I see you were having issues with the sums of
+squares... the RSS will be non-zero and the variance in yi is going to
+contribute to the magnitude. Ah, I just found a missing parentheses. You are
+only averaging one term in beta_0, so if you add parentheses around the whole
+thing, you get the right answer. You can see this when you increase N, beta 0
+does not converge to the right value. The RSS is still large, but like I said,
+this is a measure of variance, not centrality. I added some lines to your work
+so check that out.
